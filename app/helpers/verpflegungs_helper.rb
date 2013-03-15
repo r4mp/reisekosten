@@ -1,0 +1,2 @@
+module VerpflegungsHelper
+end

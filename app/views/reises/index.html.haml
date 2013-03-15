@@ -1,0 +1,26 @@
+- model_class = Reise
+.page-header
+  %h1= 'Reisen'
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:grund)
+      %th= model_class.human_attribute_name(:abfahrtDatum)
+      %th= model_class.human_attribute_name(:abfahrtUhrzeit)
+      %th= model_class.human_attribute_name(:ankunftDatum)
+      %th= model_class.human_attribute_name(:ankunftUhrzeit)
+      %th= ''
+  %tbody
+    - @reises.each do |reise|
+      %tr
+        %td= reise.grund
+        %td= reise.abfahrtDatum
+        %td= reise.abfahrtUhrzeit
+        %td= reise.ankunftDatum
+        %td= reise.ankunftUhrzeit
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_reise_path(reise), :class => 'btn btn-mini'
+          = link_to t('.details'), reise_path(reise), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), reise_path(reise), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to 'neue Reise erfassen', new_reise_path, :class => 'btn btn-primary'

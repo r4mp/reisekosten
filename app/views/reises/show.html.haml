@@ -1,0 +1,53 @@
+- model_class = Reise
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
+
+%p
+  %strong= model_class.human_attribute_name(:grund) + ':'
+  %br
+  = @reise.grund
+%p
+  %strong= model_class.human_attribute_name(:abfahrtDatum) + ':'
+  %br
+  = @reise.abfahrtDatum
+%p
+  %strong= model_class.human_attribute_name(:abfahrtUhrzeit) + ':'
+  %br
+  = @reise.abfahrtUhrzeit
+%p
+  %strong= model_class.human_attribute_name(:ankunftDatum) + ':'
+  %br
+  = @reise.ankunftDatum
+%p
+  %strong= model_class.human_attribute_name(:ankunftUhrzeit) + ':'
+  %br
+  = @reise.ankunftUhrzeit
+%p
+  %strong= model_class.human_attribute_name(:privatPkw) + ':'
+  %br
+  = @reise.privatPkw
+%p
+  %strong= model_class.human_attribute_name(:kilometer) + ':'
+  %br
+  = @reise.kilometer
+%p
+  %strong= model_class.human_attribute_name(:weitereFahrtkosten) + ':'
+  %br
+  = @reise.weitereFahrtkosten
+%p
+  %strong= model_class.human_attribute_name(:betrag) + ':'
+  %br
+  = @reise.betrag
+%p
+  %strong= model_class.human_attribute_name(:uebernachtungskosten) + ':'
+  %br
+  = @reise.uebernachtungskosten
+%p
+  %strong= model_class.human_attribute_name(:uebernachtungInklFruehstueck) + ':'
+  %br
+  = @reise.uebernachtungInklFruehstueck
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), reises_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_reise_path(@reise), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), reise_path(@reise), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

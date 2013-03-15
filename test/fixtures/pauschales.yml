@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  stunden: 1
+  betrag: 
+
+two:
+  stunden: 1
+  betrag: 
