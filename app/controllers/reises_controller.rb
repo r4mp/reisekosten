@@ -34,6 +34,8 @@ class ReisesController < ApplicationController
   # GET /reises/new.json
   def new
     @reise = Reise.new
+    @reise.ankunft = 0
+    @reise.abreise = 0
 
     respond_to do |format|
       format.html # new.html.erb

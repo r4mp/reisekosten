@@ -6,11 +6,17 @@
   .control-group
     = f.label :ankunft, :class => 'control-label'
     .controls
-      = f.text_field :ankunft, :class => 'text_field'
+      #datetimepickerAnkunft.input-append.date
+        %input#reise_ankunft{:value => @reise.ankunft.strftime('%Y-%m-%d %I:%M:%S'), :name => "reise[ankunft]", "data-format" => "yyyy-MM-dd hh:mm:ss", :type => "text"}
+          %span.add-on
+            %i{"data-date-icon" => "icon-calendar", "data-time-icon" => "icon-time"}
   .control-group
     = f.label :abreise, :class => 'control-label'
     .controls
-      = f.text_field :abreise, :class => 'text_field'
+      #datetimepickerAbreise.input-append.date
+        %input#reise_abreise{:value => @reise.abreise.strftime('%Y-%m-%d %I:%M:%S'), :name => "reise[abreise]", "data-format" => "yyyy-MM-dd hh:mm:ss", :type => "text"}
+          %span.add-on
+            %i{"data-date-icon" => "icon-calendar", "data-time-icon" => "icon-time"}
   .control-group
     = f.label :privatPkw, "privater PKW", :class => 'control-label'
     .controls
