@@ -1,4 +1,16 @@
 Reisekosten::Application.routes.draw do
+  resources :belegs
+
+
+  resources :nachweises
+
+
+  resources :verpflegungsmehraufwands
+
+
+  resources :pauschale_typs
+
+
   resources :pauschales
 
 

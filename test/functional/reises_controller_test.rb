@@ -18,7 +18,7 @@ class ReisesControllerTest < ActionController::TestCase
 
   test "should create reise" do
     assert_difference('Reise.count') do
-      post :create, reise: { abfahrtDatum: @reise.abfahrtDatum, abfahrtUhrzeit: @reise.abfahrtUhrzeit, ankunftDatum: @reise.ankunftDatum, ankunftUhrzeit: @reise.ankunftUhrzeit, betrag: @reise.betrag, grund: @reise.grund, kilometer: @reise.kilometer, privatPkw: @reise.privatPkw, uebernachtungInklFruehstueck: @reise.uebernachtungInklFruehstueck, uebernachtungskosten: @reise.uebernachtungskosten, weitereFahrtkosten: @reise.weitereFahrtkosten }
+      post :create, reise: { abfahrt: @reise.abfahrt, ankunft: @reise.ankunft, betrag: @reise.betrag, grund: @reise.grund, kilometer: @reise.kilometer, privatPkw: @reise.privatPkw, uebernachtungInklFruehstueck: @reise.uebernachtungInklFruehstueck, uebernachtungskosten: @reise.uebernachtungskosten, weitereFahrtkosten: @reise.weitereFahrtkosten }
     end
 
     assert_redirected_to reise_path(assigns(:reise))
@@ -35,7 +35,7 @@ class ReisesControllerTest < ActionController::TestCase
   end
 
   test "should update reise" do
-    put :update, id: @reise, reise: { abfahrtDatum: @reise.abfahrtDatum, abfahrtUhrzeit: @reise.abfahrtUhrzeit, ankunftDatum: @reise.ankunftDatum, ankunftUhrzeit: @reise.ankunftUhrzeit, betrag: @reise.betrag, grund: @reise.grund, kilometer: @reise.kilometer, privatPkw: @reise.privatPkw, uebernachtungInklFruehstueck: @reise.uebernachtungInklFruehstueck, uebernachtungskosten: @reise.uebernachtungskosten, weitereFahrtkosten: @reise.weitereFahrtkosten }
+    put :update, id: @reise, reise: { abfahrt: @reise.abfahrt, ankunft: @reise.ankunft, betrag: @reise.betrag, grund: @reise.grund, kilometer: @reise.kilometer, privatPkw: @reise.privatPkw, uebernachtungInklFruehstueck: @reise.uebernachtungInklFruehstueck, uebernachtungskosten: @reise.uebernachtungskosten, weitereFahrtkosten: @reise.weitereFahrtkosten }
     assert_redirected_to reise_path(assigns(:reise))
   end
 

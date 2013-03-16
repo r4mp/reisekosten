@@ -41,6 +41,8 @@ gem 'mongoid'
 gem 'bson_ext'
 gem 'therubyrhino'
 gem "twitter-bootstrap-rails"
+gem "bootstrap-datetimepicker-rails", "~> 0.0.10"
 gem 'haml-rails'
 gem 'money-rails'
 gem 'wicked_pdf'
+

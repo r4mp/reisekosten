@@ -1,26 +1,34 @@
 - model_class = Reise
 .page-header
-  %h1= 'Reisen'
+  %h1 Reisen
 %table.table.table-striped
   %thead
     %tr
       %th= model_class.human_attribute_name(:grund)
-      %th= model_class.human_attribute_name(:abfahrtDatum)
-      %th= model_class.human_attribute_name(:abfahrtUhrzeit)
-      %th= model_class.human_attribute_name(:ankunftDatum)
-      %th= model_class.human_attribute_name(:ankunftUhrzeit)
-      %th= ''
+      %th= model_class.human_attribute_name(:ankunft)
+      %th= model_class.human_attribute_name(:abreise)
+      %th privater PKW
+      %th= model_class.human_attribute_name(:kilometer)
+      %th weitere Fahrtkosten
+      %th= model_class.human_attribute_name(:betrag)
+      %th &Uuml;bernachtungskosten
+      %th inkl. Fr&uuml;hst&uuml;ck
+      %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @reises.each do |reise|
       %tr
         %td= reise.grund
-        %td= reise.abfahrtDatum
-        %td= reise.abfahrtUhrzeit
-        %td= reise.ankunftDatum
-        %td= reise.ankunftUhrzeit
+        %td= reise.ankunft
+        %td= reise.abreise
+        %td= true_false_image reise.privatPkw
+        %td= reise.kilometer
+        %td= reise.weitereFahrtkosten
+        %td= reise.betrag
+        %td= reise.uebernachtungskosten
+        %td= true_false_image reise.uebernachtungInklFruehstueck
         %td
+          = link_to t('.beleg', :default => t("helpers.links.beleg")), beleg_path(reise).to_s + '.pdf', :class => 'btn btn-mini'
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_reise_path(reise), :class => 'btn btn-mini'
-          = link_to t('.details'), reise_path(reise), :class => 'btn btn-mini'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), reise_path(reise), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
 
-= link_to 'neue Reise erfassen', new_reise_path, :class => 'btn btn-primary'
+= link_to t('.new', :default => t("helpers.links.new")), new_reise_path, :class => 'btn btn-primary'

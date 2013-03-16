@@ -1,0 +1,45 @@
+- model_class = Verpflegungsmehraufwand
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
+
+%p
+  %strong= model_class.human_attribute_name(:_id) + ':'
+  %br
+  = @verpflegungsmehraufwand._id
+%p
+  %strong= model_class.human_attribute_name(:reise_id) + ':'
+  %br
+  = @verpflegungsmehraufwand.reise_id
+%p
+  %strong= model_class.human_attribute_name(:datum) + ':'
+  %br
+  = @verpflegungsmehraufwand.datum
+%p
+  %strong= model_class.human_attribute_name(:stunden) + ':'
+  %br
+  = @verpflegungsmehraufwand.stunden
+%p
+  %strong= model_class.human_attribute_name(:nachweis) + ':'
+  %br
+  = @verpflegungsmehraufwand.nachweis
+%p
+  %strong= model_class.human_attribute_name(:ersparnis) + ':'
+  %br
+  = @verpflegungsmehraufwand.ersparnis
+%p
+  %strong= model_class.human_attribute_name(:maxBetrag) + ':'
+  %br
+  = @verpflegungsmehraufwand.maxBetrag
+%p
+  %strong= model_class.human_attribute_name(:nachweisBetrag) + ':'
+  %br
+  = @verpflegungsmehraufwand.nachweisBetrag
+%p
+  %strong= model_class.human_attribute_name(:pauschale) + ':'
+  %br
+  = @verpflegungsmehraufwand.pauschale
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), verpflegungsmehraufwands_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_verpflegungsmehraufwand_path(@verpflegungsmehraufwand), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), verpflegungsmehraufwand_path(@verpflegungsmehraufwand), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

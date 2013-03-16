@@ -2,26 +2,22 @@
 
 one:
   grund: MyString
-  abfahrtDatum: 2013-03-14
-  abfahrtUhrzeit: 2013-03-14 15:29:17
-  ankunftDatum: 2013-03-14
-  ankunftUhrzeit: 2013-03-14 15:29:17
-  privatPkw: MyString
+  ankunft: 2013-03-15 10:03:47
+  abfahrt: 2013-03-15 10:03:47
+  privatPkw: false
   kilometer: 
   weitereFahrtkosten: MyString
   betrag: 
   uebernachtungskosten: 
-  uebernachtungInklFruehstueck: MyString
+  uebernachtungInklFruehstueck: false
 
 two:
   grund: MyString
-  abfahrtDatum: 2013-03-14
-  abfahrtUhrzeit: 2013-03-14 15:29:17
-  ankunftDatum: 2013-03-14
-  ankunftUhrzeit: 2013-03-14 15:29:17
-  privatPkw: MyString
+  ankunft: 2013-03-15 10:03:47
+  abfahrt: 2013-03-15 10:03:47
+  privatPkw: false
   kilometer: 
   weitereFahrtkosten: MyString
   betrag: 
   uebernachtungskosten: 
-  uebernachtungInklFruehstueck: MyString
+  uebernachtungInklFruehstueck: false

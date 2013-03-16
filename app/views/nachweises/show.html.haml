@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Verpflegungsmehraufwand:
+  = @nachweise.verpflegungsmehraufwand_id
+%p
+  %b Betrag:
+  = @nachweise.betrag
+
+= link_to 'Edit', edit_nachweise_path(@nachweise)
+\|
+= link_to 'Back', nachweises_path

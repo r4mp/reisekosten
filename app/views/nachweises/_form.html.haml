@@ -1,0 +1,16 @@
+= form_for @nachweise do |f|
+  - if @nachweise.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@nachweise.errors.count, "error")} prohibited this nachweise from being saved:"
+      %ul
+        - @nachweise.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :verpflegungsmehraufwand_id
+    = f.text_field :verpflegungsmehraufwand_id
+  .field
+    = f.label :betrag
+    = f.text_field :betrag
+  .actions
+    = f.submit 'Save'

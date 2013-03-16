@@ -1,0 +1,85 @@
+- model_class = Belegposition
+
+%p
+  %strong Name:
+  {Name}
+
+%br
+
+%p
+  %strong Reisegrund:
+  = @reise.grund
+%p
+  %strong Abreise:
+  = @reise.abreise
+%p
+  %strong Ankunft:
+  = @reise.ankunft
+%p
+  %strong Tage:
+  = (((@reise.abreise - @reise.ankunft) / 1.days) + 1).to_i
+
+%br
+
+%h2 Fahrtkosten
+%p
+  %strong PKW-km:
+  = @reise.kilometer
+
+  %strong Betrag:
+  = @beleg.summeKilometergeld
+%p
+  %strong Anderweitige Fahrkosten:
+  = @reise.weitereFahrtkosten
+
+  %strong Betrag:
+  = @reise.betrag
+
+%br
+%br
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:datum)
+      %th= model_class.human_attribute_name(:stunden)
+      %th  &Uuml;bernachtung
+      %th= model_class.human_attribute_name(:verpflegung)
+      %th= model_class.human_attribute_name(:nebenkosten)
+      %th= model_class.human_attribute_name(:summe)
+  %tbody
+    - @belegpositionen.each do |position|
+      %tr
+        %td= position.datum
+        %td= position.stunden
+        %td= position.uebernachtung
+        %td= position.verpflegung
+        %td= position.nebenkosten
+        %td= position.summe
+    %tr
+      %td 
+      %td
+      %td
+        %strong= @beleg.summeUebernachtung
+      %td
+        %strong= @beleg.summeVerpflegung
+      %td
+        %strong= @beleg.summeNebenkosten
+      %td
+        %strong= @beleg.summeGesamt
+    %tr
+      %td
+      %td
+      %td
+      %td
+      %td
+      %td
+    %tr
+      %td 
+        %strong Reisekosten gesamt
+      %td
+      %td
+      %td
+      %td
+      %td
+        %strong= @beleg.summeReisekosten

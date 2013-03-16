@@ -1,0 +1,40 @@
+= form_for @verpflegungsmehraufwand, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :_id, :class => 'control-label'
+    .controls
+      = f.text_field :_id, :class => 'text_field'
+  .control-group
+    = f.label :reise_id, :class => 'control-label'
+    .controls
+      = f.text_field :reise_id, :class => 'text_field'
+  .control-group
+    = f.label :datum, :class => 'control-label'
+    .controls
+      = f.text_field :datum, :class => 'text_field'
+  .control-group
+    = f.label :stunden, :class => 'control-label'
+    .controls
+      = f.text_field :stunden, :class => 'text_field'
+  .control-group
+    = f.label :nachweis, :class => 'control-label'
+    .controls
+      = f.text_field :nachweis, :class => 'text_field'
+  .control-group
+    = f.label :ersparnis, :class => 'control-label'
+    .controls
+      = f.text_field :ersparnis, :class => 'text_field'
+  .control-group
+    = f.label :maxBetrag, :class => 'control-label'
+    .controls
+      = f.text_field :maxBetrag, :class => 'text_field'
+  .control-group
+    = f.label :nachweisBetrag, :class => 'control-label'
+    .controls
+      = f.text_field :nachweisBetrag, :class => 'text_field'
+  .control-group
+    = f.label :pauschale, :class => 'control-label'
+    .controls
+      = f.text_field :pauschale, :class => 'text_field'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), verpflegungsmehraufwands_path, :class => 'btn'

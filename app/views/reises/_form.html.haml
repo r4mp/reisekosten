@@ -1,26 +1,18 @@
 = form_for @reise, :html => { :class => 'form-horizontal' } do |f|
   .control-group
-    = f.label :grund, :class => 'control-label'
+    = f.label :grund, "Reisegrund", :class => 'control-label'
     .controls
       = f.text_field :grund, :class => 'text_field'
   .control-group
-    = f.label :abfahrtDatum, :class => 'control-label'
+    = f.label :ankunft, :class => 'control-label'
     .controls
-      = f.text_field :abfahrtDatum, :class => 'text_field'
+      = f.text_field :ankunft, :class => 'text_field'
   .control-group
-    = f.label :abfahrtUhrzeit, :class => 'control-label'
+    = f.label :abreise, :class => 'control-label'
     .controls
-      = f.text_field :abfahrtUhrzeit, :class => 'text_field'
+      = f.text_field :abreise, :class => 'text_field'
   .control-group
-    = f.label :ankunftDatum, :class => 'control-label'
-    .controls
-      = f.text_field :ankunftDatum, :class => 'text_field'
-  .control-group
-    = f.label :ankunftUhrzeit, :class => 'control-label'
-    .controls
-      = f.text_field :ankunftUhrzeit, :class => 'text_field'
-  .control-group
-    = f.label 'privater Pkw', :class => 'control-label'
+    = f.label :privatPkw, "privater PKW", :class => 'control-label'
     .controls
       = f.check_box :privatPkw, :class => 'check_box'
   .control-group
@@ -28,19 +20,19 @@
     .controls
       = f.text_field :kilometer, :class => 'text_field'
   .control-group
-    = f.label 'weitere Fahrtkosten', :class => 'control-label'
+    = f.label :weitereFahrtkosten, "weitere Fahrtkosten", :class => 'control-label'
     .controls
       = f.text_field :weitereFahrtkosten, :class => 'text_field'
   .control-group
     = f.label :betrag, :class => 'control-label'
     .controls
-      = f.number_field :betrag, :class => 'number_field'
+      = f.text_field :betrag, :class => 'text_field'
   .control-group
-    = f.label 'Übernachtungskosten', :class => 'control-label'
+    = f.label :uebernachtungskosten, "Übernachtungskosten", :class => 'control-label'
     .controls
       = f.text_field :uebernachtungskosten, :class => 'text_field'
   .control-group
-    = f.label 'inkl Frühstück', :class => 'control-label'
+    = f.label :uebernachtungInklFruehstueck, "inkl. Frühstück", :class => 'control-label'
     .controls
       = f.check_box :uebernachtungInklFruehstueck, :class => 'check_box'
   .form-actions

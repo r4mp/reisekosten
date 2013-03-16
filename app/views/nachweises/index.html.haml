@@ -1,0 +1,21 @@
+%h1 Listing nachweises
+
+%table
+  %tr
+    %th Verpflegungsmehraufwand
+    %th Betrag
+    %th
+    %th
+    %th
+
+  - @nachweises.each do |nachweise|
+    %tr
+      %td= nachweise.verpflegungsmehraufwand_id
+      %td= nachweise.betrag
+      %td= link_to 'Show', nachweise
+      %td= link_to 'Edit', edit_nachweise_path(nachweise)
+      %td= link_to 'Destroy', nachweise, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Nachweise', new_nachweise_path

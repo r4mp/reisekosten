@@ -1,31 +1,22 @@
 - model_class = Reise
 .page-header
   %h1=t '.title', :default => model_class.model_name.human
-
 %p
   %strong= model_class.human_attribute_name(:grund) + ':'
   %br
   = @reise.grund
 %p
-  %strong= model_class.human_attribute_name(:abfahrtDatum) + ':'
+  %strong= model_class.human_attribute_name(:ankunft) + ':'
   %br
-  = @reise.abfahrtDatum
+  = @reise.ankunft
 %p
-  %strong= model_class.human_attribute_name(:abfahrtUhrzeit) + ':'
+  %strong= model_class.human_attribute_name(:abreise) + ':'
   %br
-  = @reise.abfahrtUhrzeit
-%p
-  %strong= model_class.human_attribute_name(:ankunftDatum) + ':'
-  %br
-  = @reise.ankunftDatum
-%p
-  %strong= model_class.human_attribute_name(:ankunftUhrzeit) + ':'
-  %br
-  = @reise.ankunftUhrzeit
+  = @reise.abreise
 %p
   %strong= model_class.human_attribute_name(:privatPkw) + ':'
   %br
-  = @reise.privatPkw
+  = true_false_image @reise.privatPkw
 %p
   %strong= model_class.human_attribute_name(:kilometer) + ':'
   %br
@@ -45,7 +36,7 @@
 %p
   %strong= model_class.human_attribute_name(:uebernachtungInklFruehstueck) + ':'
   %br
-  = @reise.uebernachtungInklFruehstueck
+  = true_false_image @reise.uebernachtungInklFruehstueck
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), reises_path, :class => 'btn'

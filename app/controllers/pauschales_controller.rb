@@ -44,7 +44,7 @@ class PauschalesController < ApplicationController
 
     respond_to do |format|
       if @pauschale.save
-        format.html { redirect_to @pauschale, notice: 'Pauschale was successfully created.' }
+        format.html { redirect_to :action => "index", notice: 'Pauschale was successfully created.' }
         format.json { render json: @pauschale, status: :created, location: @pauschale }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class PauschalesController < ApplicationController
 
     respond_to do |format|
       if @pauschale.update_attributes(params[:pauschale])
-        format.html { redirect_to @pauschale, notice: 'Pauschale was successfully updated.' }
+        format.html { redirect_to :action => "index", notice: 'Pauschale was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

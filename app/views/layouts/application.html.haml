@@ -16,6 +16,14 @@
     %link(href="images/apple-touch-icon.png" rel="apple-touch-icon-precomposed")
     %link(href="favicon.ico" rel="shortcut icon")
 
+    %script{:type => "text/javascript"} 
+      $(function() {
+      $('#datetimepicker1').datetimepicker({
+      language: 'de'
+      });
+      });
+
+
 
   %body
     .navbar.navbar-fluid-top
@@ -25,10 +33,10 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="#") Reisekosten
+          %a.brand(href="/") Reisekosten
           .container.nav-collapse
-            /%ul.nav
-            /  %li= link_to "Link 1", "/path1"
+            %ul.nav
+              %li= link_to "Optionen", "/pauschales"
             /  %li= link_to "Link 2", "/path2"
             /  %li= link_to "Link 3", "/path3"
 
