@@ -1,5 +1,7 @@
 class ReisesController < ApplicationController
 
+  #caches_page :index, :show
+
   #active_scaffold :document do |config|
   #  config.columns = [ :id, :product, :title, :document_type, :author, :organization, :document_approver, :document_location ]
   #  config.list.columns.exclude :organization, :document_approver, :document_location
@@ -54,6 +56,26 @@ class ReisesController < ApplicationController
     @reise = Reise.new(params[:reise])
 
     respond_to do |format|
+
+      if ((@reise.abreise - @reise.ankunft) / 1.day).to_i > 365
+        flash.now[:error] = "Reise zu lang"
+        render action: "new"
+        return
+      end
+
+      # TODO: "Negative" Tagesreisen mit abfangen!!!
+      if ((@reise.abreise - @reise.ankunft) / 1.day).to_i < 0
+        flash.now[:error] = "Das Abreisedatum liegt vor dem Ankunftsdatum"
+        render action: "new"
+        return
+      end
+
+      if ( @reise.abreise.year.to_i < 1970 ) || ( @reise.ankunft.year.to_i < 1970 )
+        flash.now[:error] = "Das angegebene Datum darf nicht vor dem 01.01.1970 liegen"
+        render action: "new"
+        return
+      end
+
       if @reise.save
 
         ##Rails.logger.debug("reisekosten [DEBUG] " + @reise.inspect)
@@ -78,6 +100,16 @@ class ReisesController < ApplicationController
     @reise = Reise.find(params[:id])
 
     respond_to do |format|
+
+      # TODO: !!!
+      #if ((@reise.abreise - @reise.ankunft) / 1.day).to_i > 365
+      #  flash.now[:error] = "Reise zu lang"
+      #  render action: "edit"
+      #  return
+      #end
+
+      # TODO: Die Abfragen aus 'create' auch hier uebernehmen!!!
+
       if @reise.update_attributes(params[:reise])
         format.html { redirect_to :action => "index", notice: 'Reise was successfully updated.' }
         format.json { head :no_content }

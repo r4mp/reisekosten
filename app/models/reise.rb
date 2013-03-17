@@ -11,5 +11,5 @@ class Reise
   field :uebernachtungInklFruehstueck, type: Boolean
   field :erfassungAbgeschlossen, type: Boolean
 
-  validates_presence_of :grund, :ankunft, :abreise, :kilometer
+  validates_presence_of :grund, :ankunft, :abreise
 end
