@@ -45,4 +45,5 @@ gem "bootstrap-datetimepicker-rails", "~> 0.0.10"
 gem 'haml-rails'
 gem 'money-rails'
 gem 'wicked_pdf'
+gem 'fcgi'
 
